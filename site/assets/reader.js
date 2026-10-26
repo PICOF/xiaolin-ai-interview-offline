@@ -1,0 +1,2 @@
+
+(()=>{const q=document.getElementById('filter');if(!q)return;const groups=[...document.querySelectorAll('.nav-group')];q.addEventListener('input',()=>{const term=q.value.trim().toLowerCase();for(const group of groups){let hits=0;for(const li of group.querySelectorAll('[data-title]')){li.hidden=!!term&&!li.dataset.title.includes(term);if(!li.hidden)hits++}group.hidden=!!term&&!hits;if(term)group.open=!!hits}for(const li of document.querySelectorAll('.catalog-list [data-title]'))li.hidden=!!term&&!li.dataset.title.includes(term);});})();
